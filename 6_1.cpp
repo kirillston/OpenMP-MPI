@@ -6,13 +6,15 @@
 #include <stdio.h>
 #include <time.h>
 
-//#include "stdafx.h"
-
 #define MAX_NUM_THREADS 4
 #define AVG_GROUP_NUM 8
 #define DEV_GROUP_NUM 5
 #define MIN_MARK 3
 #define MAX_MARK 5
+
+/*
+	Program evaluates average score on exam in each group and among all students.
+*/
 
 int main(int argc, char** argv)
 {
@@ -23,13 +25,11 @@ int main(int argc, char** argv)
 	int tail_addition = 0;
 	
 	if (argc == 3) {
-		try {
-			num_threads = atoi(argv[1]);
-			num_groups = atoi(argv[2]);
-		}
-		catch (int exception)
-		{
-			std::cerr << "Number of threads and number of groups should be integers.\n";
+		
+		num_threads = atoi(argv[1]);
+		num_groups = atoi(argv[2]);
+		if (num_threads * num_groups == 0) {
+			std::cerr << "Number of threads and number of groups should be positive integers.\n";
 			return 1;
 		}
 		
