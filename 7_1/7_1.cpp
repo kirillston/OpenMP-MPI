@@ -12,6 +12,7 @@ int main(int argc, char** argv) {
 	int N = atoi(argv[1]);
 	if (N == 0) {
 		printf("Passed argument - array length - should be a positive integer.\n");
+		return 2;
 	}
 	double a[N];
 	// array initialization
