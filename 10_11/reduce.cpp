@@ -27,6 +27,15 @@ void print_array(int rank, int *array, int length) {
   	printf("\n");
 }
 
+/**
+	Each process of the program generates its own array of integers
+	with the size equal to processes number.
+	
+	Process uses MPI_Reduce_scatter() call and measures time of 
+	executing this command.
+	
+	Resulting time is then written down in output 'time.txt' file.
+**/
 
 int main(int argc, char* argv[]) {
 	MPI_Init( &argc, &argv );

@@ -8,6 +8,11 @@ N = 50
 start = 2
 finish = 20
 
+#   This program computes average time for executing the computational core of
+#   reduce.cpp and 10_11.cpp programs.
+#
+#   Results are shown in the graph that is being saved in 'stats.png' file.
+
 if __name__ == '__main__':
 	K = finish - start + 1
 	time_reduce = np.zeros(K)

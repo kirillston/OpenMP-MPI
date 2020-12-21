@@ -1,11 +1,25 @@
-#include "mpi.h"
-
+#include <mpi.h>
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
 
 int N;
+
+/**
+	Program takes as an input argument text file name
+	with list of integers provided.
+	
+	Fisrt integer should be the amount of integers
+	product of which we need to compute.
+	
+	All integers must be separated by CRLF.
+	
+	Computations are divided by the parallel processes
+	that sends messages to each other using MPI library.
+	
+	Dihotomie is used to parallel all the computation.
+**/
 
 int process_file(const char* filename) {
 	std::ifstream ifs;
